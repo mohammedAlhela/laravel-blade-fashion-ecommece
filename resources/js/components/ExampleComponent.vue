@@ -5,19 +5,7 @@
                 <div class="card">
                     <div class="card-header">Example Component</div>
 
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-
-
-                    <div class="card-actions">
-                        <button @click = 'test ()'>
-                            click me
-                        </button>
-                    </div>
-
-
-
+                    <div class="card-body">I'm an example component.</div>
                 </div>
             </div>
         </div>
@@ -25,15 +13,9 @@
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        },
-
-        methods : {
-            test () {
-                console.log('i work');
-            }
-        }
-    }
+export default {
+    mounted() {
+        console.log("Component mounted.");
+    },
+};
 </script>

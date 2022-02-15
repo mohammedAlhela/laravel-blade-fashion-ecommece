@@ -10,484 +10,265 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-
-
-
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.dd.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
 
 
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/elegant-icons.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <!--++++++++++++++++++++++++++ the css styles and libraries +++++++++++++++++++++++ -->
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="  {{ asset('css/animate.css') }} ">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="  {{ asset('css/icomoon.css') }}  ">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="  {{ asset('css/bootstrap.css') }} ">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="  {{ asset('css/magnific-popup.css') }}">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="  {{ asset('css/flexslider.css') }}">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href=" {{ asset('css/owl.carousel.min.css ') }}">
+
+    <link rel="stylesheet" href="  {{ asset('css/owl.theme.default.min.css') }}">
+
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="  {{ asset('css/bootstrap-datepicker.css') }}">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="  {{ asset('fonts/flaticon/font/flaticon.css') }}">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="  {{ asset('css/style.css') }}">
+    <!--++++++++++++++++++++++++++ the css styles and libraries +++++++++++++++++++++++ -->
+
+
+
+
+
+
+
 
 </head>
 
 <body>
-    <div id="app-1">
-        <!-- Page Preloder -->
-        <div id="preloder">
-            <div class="loader"></div>
-        </div>
 
-        <!-- Header Section Begin -->
-        <header class="header-section">
-            <div class="header-top">
+
+    <div class="colorlib-loader"></div>
+
+    <div id="page">
+
+        <nav class="colorlib-nav" role="navigation">
+            <div class="top-menu">
                 <div class="container">
-                    <div class="ht-left">
-                        <div class="mail-service">
-                            <i class=" fa fa-envelope"></i>
-                            istanbuliat@gmail.com
-                        </div>
-                        <div class="phone-service">
-                            <i class="fa fa-phone"></i>
-                            +65
-                            11.188.888
-                        </div>
-                    </div>
-                    <div class="ht-right">
-                        @auth
-                            <div class="login-panel">
-                                <button type="button" class="btn btn-light dropdown-toggle account-button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Mohammed
-                                    alhelal
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="account">Account</a>
-                                    <a class="dropdown-item" href="logout">Logout</a>
-                                </div>
-                            </div>
-                        @endauth
-                        @guest
-                            <span class="login-panel">
-                                <i class="fa fa-user"></i>
-                                <a href="register" class="hovered">
-                                    Register
-                                </a>
-                                /
-                                <a href="login" class="hovered">
-                                    Login
-                                </a>
-                            </span>
-                        @endguest
-                        <div class="top-social">
-                            <a
-                                href="https://www.facebook.com/pages/category/Shopping---Retail/Istanbuliat-UAE-112297630516968/"><i
-                                    class="ti-facebook"></i></a>
-                            <a href="https://mobile.twitter.com/hashtag/istanbulmodestfashionweek?src=hash"><i
-                                    class="ti-twitter-alt"></i></a>
-                            <a href="https://www.instagram.com/explore/tags/istanbuliat/?hl=en"><i
-                                    class="ti-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="inner-header">
+
+
+
                     <div class="row">
-                        <div class="col-lg-2 col-md-2">
-                            <div class="logo">
-                                <a href="./">
-                                    <img src="img/logo.png" alt="">
-                                </a>
-                            </div>
+                        <div class="col-xs-2">
+
+                            <img src="images/project/brand.jpeg" alt="no brand" width = "100px">
+
+                            {{-- <div id="colorlib-logo"><a href="index.html">Istanbuliat</a></div> --}}
                         </div>
-                        <div class="col-lg-7 col-md-7">
-                            <div class="advanced-search">
-                                <div class="input-group">
-                                    <input type="text" placeholder="What do you need?">
-                                    <button type="button"><i class="ti-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 text-right col-md-3">
-                            <ul class="nav-right">
-                                <li class="heart-icon">
-                                    <a href="/whishlist">
-                                        <i class="icon_heart_alt"></i>
-                                        <span>1</span>
-                                    </a>
+                        <div class="col-xs-10 text-right menu-1">
+                            <ul>
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="has-dropdown">
+                                    <a href="shop.html">Shop</a>
+                                    <ul class="dropdown">
+                                        <li><a href="product-detail.html">Product Detail</a></li>
+                                        <li><a href="cart.html">Shipping Cart</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="order-complete.html">Order Complete</a></li>
+                                        <li><a href="add-to-wishlist.html">Wishlist</a></li>
+                                    </ul>
                                 </li>
-                                <li class="cart-icon">
-                                    <a href="/cart" class="cart-icon-link">
-                                        <i class="icon_cart_alt"></i>
-                                        <span>3</span>
-                                    </a>
-                                    <div class="cart-hover">
-                                        <div class="select-items">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="si-pic">
-                                                            <img src="img/select-product-1.jpg" alt="">
-                                                        </td>
-                                                        <td class="si-text">
-                                                            <div class="product-selected">
-                                                                <p>$60.00 x 1
-                                                                </p>
-                                                                <h6>Kabino Bedside Table
-                                                                </h6>
-                                                            </div>
-                                                        </td>
-                                                        <td class="si-close">
-                                                            <i class="ti-close"></i>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="si-pic">
-                                                            <img src="img/select-product-2.jpg" alt="">
-                                                        </td>
-                                                        <td class="si-text">
-                                                            <div class="product-selected">
-                                                                <p>$60.00 x 1
-                                                                </p>
-                                                                <h6>Kabino Bedside Table
-                                                                </h6>
-                                                            </div>
-                                                        </td>
-                                                        <td class="si-close">
-                                                            <i class="ti-close"></i>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="select-total">
-                                            <span>total:</span>
-                                            <h5>$120.00
-                                            </h5>
-                                        </div>
-                                        <div class="select-button">
-                                            <a href="/cart" class="primary-btn view-card">VIEW
-                                                CARD</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="cart-price">
-                                    $150.00
-                                </li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="nav-item">
-                <div class="my-container">
-                    <div class="nav-depart">
+
+                    <div class="row">
+                        <div class="col-xs-2">
+
+                          <p> Search button is here  </p>
 
 
+                        </div>
+                        <div class="col-xs-10 text-right menu-1">
+                            <ul>
 
-                        <div class="depart-btn @if (\Request::is('shop')) active-depart-btn @endif">
-
-
-                            <span class="paragraph">Sections</span>
-                            <ul class="depart-hover">
-                                <li><a href="#">Women’s
-                                        Clothing</a>
-                                </li>
-                                <li><a href="#">Men’s
-                                        Clothing</a>
-                                </li>
-                                <li><a href="#">Underwear</a>
-                                </li>
-                                <li><a href="#">Kid's
-                                        Clothing</a>
-                                </li>
-                                <li><a href="#">Brand
-                                        Fashion</a>
-                                </li>
+                                <li><a href="cart.html"><i class="icon-heart"></i> Cart [0]</a></li>
+                                <li><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
                             </ul>
                         </div>
                     </div>
-                    <nav class="nav-menu ">
-                        <ul>
-                            <li class=" @if (\Request::is('/')) active @endif">
-                                <a href="./">Home</a>
-                            </li>
-
-                            <li class=" @if (\Request::is('contact')) active @endif">
-                                <a href="/contact">Contact</a>
-
-                            <li class=" @if (\Request::is('about')) active @endif">
-
-                                <a href="/about">About</a>
-
-                            </li>
 
 
 
-                            <li class="policies-menu @if (\Request::is('policies')) active @endif">
-
-                                <a href="#" class="policies-holder">Policies</a>
-
-
-
-                                <ul class="dropdown">
-                                    <li><a href="./policies/privacy">Privacy</a>
-                                    </li>
-                                    <li><a href="./policies/shopping">Shopping</a>
-                                    </li>
-                                    <li><a href="./policies/refound">Refound</a>
-                                    </li>
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </nav>
-                    <div id="mobile-menu-button">
-                        Menu <i class="fa fa-bars ml-1"></i>
-                    </div>
-
-                    <div id="mobile-menu">
-                        <ul class="menu">
-
-                            <div class="mobile-sub-menu-holder">
-                                <li class="link " id="">
-
-                                    <span cl
-                                        class="paragraph sub-menu-trigger @if (\Request::is('shop')) active-sub-menu-trigger @endif">
-
-
-
-
-
-                                        Sections <i class="toggle-chevron fa fa-chevron-circle-right"> </i>
-
-                                    </span>
-
-
-
-                                    <ul class="mobile-sub-menu">
-                                        <li class="link">
-                                            <a href="/privary">Coats</a>
-                                        </li>
-
-                                        <li class="link">
-                                            <a href="/privary">Dresses</a>
-                                        </li>
-
-
-                                        <li class="link">
-                                            <a href="/privary">Kimono</a>
-                                        </li>
-
-
-                                        <li class="link">
-                                            <a href="/privary">Abayas</a>
-                                        </li>
-
-                                    </ul>
-
-                                </li>
-
-                            </div>
-                            <li class=" link ">
-                                <a href="/"><span       class="paragraph  @if (\Request::is('/')) active @endif">  Home </span></a>
-
-                            </li>
-
-                            <li class="link">
-
-                                <a href="/contact"><span       class="paragraph  @if (\Request::is('contact')) active @endif">  Contact </span></a>
-
-                            </li>
-
-                            <li class="link">
-
-                                <a href="/about"> <span       class="paragraph  @if (\Request::is('about')) active @endif">  About </span></a>
-
-                            </li>
-
-
-
-
-
-
-                            <div class="mobile-sub-menu-holder">
-                                <li class="link">
-
-                                    <span
-                                        class="paragraph sub-menu-trigger @if (\Request::is('policies')) active-sub-menu-trigger @endif">
-                                        Policies <i class="toggle-chevron fa fa-chevron-circle-right"> </i>
-                                    </span>
-                                    <ul class="mobile-sub-menu">
-                                        <li class="link">
-                                            <a href="/privary">Privacy</a>
-
-                                        </li>
-
-                                        <li class="link">
-                                            <a href="/privary">Shopping</a>
-                                        </li>
-                                        <li class="link">
-                                            <a href="/privary">Refound</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </div>
-                        </ul>
-                    </div>
                 </div>
             </div>
-        </header>
-        <!-- Header End -->
-        <main class="">
+        </nav>
+
+        <main>
             @yield('content')
         </main>
-        <footer class="footer-section">
+
+
+
+        <div id="colorlib-subscribe">
+            <div class="overlay"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3">
-                        <div class="footer-left">
-                            <div class="footer-logo">
-                                <a href="#"><img src="img/footer-logo.png" alt=""></a>
-                            </div>
-                            <ul>
-                                <li>Phone: +65 11.188.888
-                                </li>
-                                <li>Email: istanbuliat@gmail.com
-                                </li>
-                            </ul>
-                            <div class="footer-social">
-                                <a
-                                    href="https://www.facebook.com/pages/category/Shopping---Retail/Istanbuliat-UAE-112297630516968/"><i
-                                        class="fa fa-facebook"></i></a>
-                                <a href="https://mobile.twitter.com/hashtag/istanbulmodestfashionweek?src=hash"><i
-                                        class="fa fa-twitter"></i></a>
-                                <a href="https://www.instagram.com/explore/tags/istanbuliat/?hl=en"><i
-                                        class="fa fa-instagram"></i></a>
-                            </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="col-md-6 text-center">
+                            <h2><i class="icon-paperplane"></i>Sign Up for a Newsletter</h2>
                         </div>
-                    </div>
-                    <div class="col-lg-2 offset-lg-1">
-                        <div class="footer-widget">
-                            <h5>Pages
-                            </h5>
-                            <ul>
-                                <li><a href="/home" class="hovered">Home</a>
-                                </li>
-                                <li><a href="/shop" class="hovered">Shop</a>
-                                </li>
-                                <li><a href="/contact" class="hovered">Contact</a>
-                                </li>
-                                <li><a href="/about" class="hovered">About</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="footer-widget">
-                            <h5>Account
-                            </h5>
-                            <ul>
-                                <li><a href="/account" class="hovered">Profile</a>
-                                </li>
-                                <li><a href="/orders" class="hovered">Orders</a>
-                                </li>
-                                <li><a href="/cart" class="hovered">Shopping
-                                        Cart</a>
-                                </li>
-                                <li><a href="/whishlist" class="hovered">Whishlists</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="newslatter-item">
-                            <h5>Subscripe Now
-                            </h5>
-                            <p>Get E-mail updates
-                                about
-                                our
-                                latest
-                                shop
-                                and
-                                special
-                                offers.
-                            </p>
-                            <form action="#" class="subscribe-form">
-                                <input type="text" placeholder="Enter Your Mail">
-                                <button type="button">Subscribe</button>
+                        <div class="col-md-6">
+                            <form class="form-inline qbstp-header-subscribe">
+                                <div class="row">
+                                    <div class="col-md-12 col-md-offset-0">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="email"
+                                                placeholder="Enter your email">
+                                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="copyright-reserved">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="copyright-text">
+        </div>
+
+
+        <footer id="colorlib-footer" role="contentinfo">
+            <div class="container">
+                <div class="row row-pb-md">
+                    <div class="col-md-3 colorlib-widget">
+                        <h4>About Store</h4>
+                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
+                            adipisci architecto culpa amet.</p>
+                        <p>
+                        <ul class="colorlib-social-icons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="col-md-2 colorlib-widget">
+                        <h4>Customer Care</h4>
+                        <p>
+                        <ul class="colorlib-footer-links">
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Returns/Exchange</a></li>
+                            <li><a href="#">Gift Voucher</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Special</a></li>
+                            <li><a href="#">Customer Services</a></li>
+                            <li><a href="#">Site maps</a></li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="col-md-2 colorlib-widget">
+                        <h4>Information</h4>
+                        <p>
+                        <ul class="colorlib-footer-links">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Delivery Information</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Order Tracking</a></li>
+                        </ul>
+                        </p>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h4>News</h4>
+                        <ul class="colorlib-footer-links">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Exhibitions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h4>Contact Information</h4>
+                        <ul class="colorlib-footer-links">
+                            <li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
+                            <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+                            <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+                            <li><a href="#">yoursite.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copy">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+
+                            <span class="block">
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 <script>
                                     document.write(new Date().getFullYear());
-                                </script>
-                                All
-                                rights
-                                reserved
-                                |
-                                Powered
-                                by
-                                <strong> brothers soft
-                                </strong>
+                                </script> All rights reserved | This template is made with <i
+                                    class="icon-heart2" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                    target="_blank">Colorlib</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </div>
-                            <div class="payment-pic">
-                                <img src="img/payment-method.png" alt="">
-                            </div>
-                        </div>
+                            </span>
+                            <span class="block">Demo Images: <a href="http://unsplash.co/"
+                                    target="_blank">Unsplash</a> , <a href="http://pexels.com/"
+                                    target="_blank">Pexels.com</a></span>
+                        </p>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+    </div>
+
+
 </body>
 
 
+<!--++++++++++++++++++++++++++ the js  +++++++++++++++++++++++ -->
+<!-- jQuery -->
+<script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<!-- jQuery Easing -->
+<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+<!-- Bootstrap -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<!-- Waypoints -->
+<script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+<!-- Flexslider -->
+<script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+<!-- Owl carousel -->
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<!-- Magnific Popup -->
+<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 
-<script>
-    $(document).ready(function() {
-        $('#mobile-menu-button').click(function() {
-            $('#mobile-menu').slideToggle();
-        });
-
-
-
-        $('.sub-menu-trigger').click(function() {
-            $(this).find('.toggle-chevron').toggleClass('fa-chevron-circle-right');
-            $(this).find('.toggle-chevron').toggleClass('fa-chevron-circle-down');
-            $(this).next().slideToggle('fast');
-        });
-
-    });
-</script>
+<script src="{{ asset('js/magnific-popup-options.js') }}"></script>
+<!-- Date Picker -->
+<script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+<!-- Stellar Parallax -->
+<script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+<!-- Main -->
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+<!--++++++++++++++++++++++++++ the js +++++++++++++++++++++++ -->
 
 </html>
