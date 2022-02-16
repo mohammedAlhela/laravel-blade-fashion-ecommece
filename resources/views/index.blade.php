@@ -4,24 +4,6 @@
 <aside id="colorlib-hero">
     <div class="flexslider">
         <ul class="slides">
-           <li style="background-image: url(images/img_bg_1.jpg);">
-               <div class="overlay"></div>
-               <div class="container-fluid">
-                   <div class="row">
-                       <div class="col-md-6 col-md-offset-3 col-md-pull-2 col-sm-12 col-xs-12 slider-text">
-                           <div class="slider-text-inner">
-                               <div class="desc">
-                                   <h1 class="head-1">Men's</h1>
-                                   <h2 class="head-2">Jeans</h2>
-                                   <h2 class="head-3">Collection</h2>
-                                   <p class="category"><span>New stylish shirts, pants &amp; Accessories</span></p>
-                                   <p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </li>
            <li style="background-image: url(images/img_bg_2.jpg);">
                <div class="overlay"></div>
                <div class="container-fluid">
@@ -64,33 +46,50 @@
 
 
 <div id="colorlib-featured-product">
-    <div class="container">
+    <div class="  categories-container">
         <div class="row">
             <div class="col-md-6">
-                <a href="shop.html" class="f-product-1" style="background-image: url(images/item-1.jpg);">
+                <a href="shop.html" class="f-product-1" style="background-image: url(images/categories/607a8724ea9b7d74701a3a68286cd4a9.jpg);">
                     <div class="desc">
-                        <h2>Fahion <br>for <br>men</h2>
+                        <h2>Fahion <br>for <br> Tops</h2>
                     </div>
                 </a>
             </div>
+
+
             <div class="col-md-6">
                 <div class="row">
+
                     <div class="col-md-6">
                         <a href="" class="f-product-2" style="background-image: url(images/item-2.jpg);">
                             <div class="desc">
-                                <h2>New <br>Arrival <br>Dress</h2>
+                                <h2>Shirts <br>100 <br> item</h2>
                             </div>
                         </a>
                     </div>
+
+
+                    <div class="col-md-6">
+                        <a href="" class="f-product-2" style="background-image: url(images/categories/abayas.jpg);">
+                            <div class="desc">
+                                <h2>Abayas <br>50 <br>items</h2>
+                            </div>
+                        </a>
+                    </div>
+
+
+
                     <div class="col-md-6">
                         <a href="" class="f-product-2" style="background-image: url(images/item-4.jpg);">
                             <div class="desc">
-                                <h2>Sale <br>20% <br>off</h2>
+                                <h2>Coats <br>30 <br>Items</h2>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-12">
-                        <a href="" class="f-product-2" style="background-image: url(images/item-3.jpg);">
+
+
+                    <div class="col-md-6">
+                        <a href="" class="f-product-2" style="background-image: url(images/item-5.jpg);">
                             <div class="desc">
                                 <h2>Shoes <br>for <br>men</h2>
                             </div>
@@ -99,6 +98,9 @@
                 </div>
             </div>
         </div>
+
+
+
     </div>
 </div>
 <div class="colorlib-shop">

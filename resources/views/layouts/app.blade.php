@@ -67,45 +67,96 @@
 
 
 
-                    <div class="row">
-                        <div class="col-xs-2">
 
-                            <img src="images/project/brand.jpeg" alt="no brand" width = "100px">
+                    <div class="row account-holder">
+                        <div class="col-xs-3">
 
-                            {{-- <div id="colorlib-logo"><a href="index.html">Istanbuliat</a></div> --}}
+                            <img src="images/project/brand.jpeg" alt="no brand" width="100px">
+
+
                         </div>
-                        <div class="col-xs-10 text-right menu-1">
+                        <div class="col-xs9 text-right menu-1">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
-                                <li class="has-dropdown">
-                                    <a href="shop.html">Shop</a>
+                                <li class="has-dropdown"><a href="cart.html"><i class="icon-user"></i>
+                                        {{ Auth::check() ? auth()->user()->name : 'account' }}
+                                    </a>
                                     <ul class="dropdown">
-                                        <li><a href="product-detail.html">Product Detail</a></li>
-                                        <li><a href="cart.html">Shipping Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="order-complete.html">Order Complete</a></li>
-                                        <li><a href="add-to-wishlist.html">Wishlist</a></li>
+                                        @if (Auth::check())
+                                            <li><a href="/home">Profile</a></li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                style="">
+                                                @csrf
+
+                                                <li><a href="javascript:{}"
+                                                        onclick="document.getElementById('logout-form').submit();">Logout</a>
+                                                </li>
+                                            </form>
+
+                                        @else
+                                            <li><a href="/register">Register</a></li>
+                                            <li><a href="/login">Login</a></li>
+                                        @endif
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+
+                                <li><a href="/whishlist"><i class="icon-heart"></i> Cart [0]</a></li>
+                                <li><a href="/cart"><i class="icon-shopping-cart"></i> Whishlist [0]</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-xs-2">
 
-                          <p> Search button is here  </p>
+
+
+
+
+                    <div class="row search-links-holder">
+                        <div class="col-xs-4">
+
+
+
+
+
+                            <div class="input-group add-on search-input">
+                                <input class="form-control" placeholder="Search" name="srch-term" id="srch-term"
+                                    type="text">
+                                <span class="search-icon-holder">
+
+
+                                    <i class="icon-search"></i>
+                                </span>
+                            </div>
 
 
                         </div>
-                        <div class="col-xs-10 text-right menu-1">
+                        <div class="col-xs-8 text-right menu-1">
                             <ul>
+                                <li class="active"><a href="/">Home</a></li>
+                                <li class="has-dropdown">
+                                    <a href="#">Shop</a>
+                                    <ul class="dropdown">
+                                        <li><a href="product-detail.html">Abayas</a></li>
+                                        <li><a href="cart.html">Coats</a></li>
+                                        <li><a href="checkout.html">Kimono</a></li>
+                                        <li><a href="order-complete.html">Pants</a></li>
 
-                                <li><a href="cart.html"><i class="icon-heart"></i> Cart [0]</a></li>
-                                <li><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/contact">Contact</a></li>
+
+                                <li class="has-dropdown">
+                                    <a href="#">Policies</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/policies/shipping">Shipping</a></li>
+                                        <li><a href="/policies/Refound">Refound</a></li>
+                                        <li><a href="/policies/Privacy">Privacy</a></li>
+
+
+                                    </ul>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -153,61 +204,51 @@
             <div class="container">
                 <div class="row row-pb-md">
                     <div class="col-md-3 colorlib-widget">
-                        <h4>About Store</h4>
+                        <h4>About Istanbuliat</h4>
                         <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
                             adipisci architecto culpa amet.</p>
                         <p>
                         <ul class="colorlib-social-icons">
                             <li><a href="#"><i class="icon-twitter"></i></a></li>
                             <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                            <li><a href="#"><i class="icon-instagram"></i></a></li>
                         </ul>
                         </p>
                     </div>
                     <div class="col-md-2 colorlib-widget">
                         <h4>Customer Care</h4>
-                        <p>
+
                         <ul class="colorlib-footer-links">
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/contact">Contact</a></li>
                             <li><a href="#">Returns/Exchange</a></li>
-                            <li><a href="#">Gift Voucher</a></li>
-                            <li><a href="#">Wishlist</a></li>
+
+                            <li><a href="/whishlist">Wishlist</a></li>
                             <li><a href="#">Special</a></li>
                             <li><a href="#">Customer Services</a></li>
-                            <li><a href="#">Site maps</a></li>
+
                         </ul>
-                        </p>
+
                     </div>
                     <div class="col-md-2 colorlib-widget">
                         <h4>Information</h4>
-                        <p>
+
                         <ul class="colorlib-footer-links">
-                            <li><a href="#">About us</a></li>
+                            <li><a href="/about">About us</a></li>
                             <li><a href="#">Delivery Information</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="policies/privacy">Privacy Policy</a></li>
                             <li><a href="#">Support</a></li>
                             <li><a href="#">Order Tracking</a></li>
                         </ul>
-                        </p>
+
                     </div>
 
-                    <div class="col-md-2">
-                        <h4>News</h4>
-                        <ul class="colorlib-footer-links">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Exhibitions</a></li>
-                        </ul>
-                    </div>
 
                     <div class="col-md-3">
                         <h4>Contact Information</h4>
                         <ul class="colorlib-footer-links">
-                            <li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
+                            <li>Al ailn <br> Alhalidia street</li>
                             <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                            <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-                            <li><a href="#">yoursite.com</a></li>
+                            <li><a href="mailto:info@yoursite.com">istanbuliat@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -223,12 +264,10 @@
                                     document.write(new Date().getFullYear());
                                 </script> All rights reserved | This template is made with <i
                                     class="icon-heart2" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                    target="_blank">Colorlib</a>
+                                    target="_blank">Istanbuliat</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </span>
-                            <span class="block">Demo Images: <a href="http://unsplash.co/"
-                                    target="_blank">Unsplash</a> , <a href="http://pexels.com/"
-                                    target="_blank">Pexels.com</a></span>
+
                         </p>
                     </div>
                 </div>
