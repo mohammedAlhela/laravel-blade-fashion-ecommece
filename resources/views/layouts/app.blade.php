@@ -64,16 +64,9 @@
         <nav class="colorlib-nav" role="navigation">
             <div class="top-menu">
                 <div class="container">
-
-
-
-
                     <div class="row account-holder">
                         <div class="col-xs-3">
-
-                            <img src="images/project/brand.jpeg" alt="no brand" width="100px">
-
-
+                            <img src="{{ asset('images/project/brand.jpeg') }}" alt="no brand" width="100px">
                         </div>
                         <div class="col-xs9 text-right menu-1">
                             <ul>
