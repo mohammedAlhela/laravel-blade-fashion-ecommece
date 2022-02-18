@@ -21,6 +21,12 @@
         "sass-loader": "^11.0.1",
         "vue": "^2.6.12",
         "vue-loader": "^15.9.8",
-        "vue-template-compiler": "^2.6.12"
+        "vue-template-compiler": "^2.6.12",
+        "@mdi/font": "^5.5.55"
+    },
+
+    "dependencies": {
+        "vuex": "^3.6.2",
+        "vuetify": "^2.5.3"
     }
 }

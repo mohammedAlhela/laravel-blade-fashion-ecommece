@@ -1,0 +1,96 @@
+.owl-slider-holder {
+  padding-top: 30px;
+  width: 75%;
+  float: right;
+  position: relative;
+  display: flex;
+
+  @media (max-width: 1300px) {
+    width: 65%;
+  }
+
+  @media (max-width: 968px) {
+    width: 55%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .left-chevron-holder {
+    width: 8%;
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    @media (max-width: 1300px) {
+      width: 10%;
+    }
+
+    @media (max-width: 968px) {
+      width: 15%;
+    }
+  }
+
+  .right-chevron-holder {
+    width: 8%;
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    @media (max-width: 1300px) {
+      width: 10%;
+    }
+
+    @media (max-width: 968px) {
+      width: 15%;
+    }
+  }
+  .slider {
+    width: 84%;
+    float: left;
+
+    @media (max-width: 1300px) {
+      width: 80%;
+    }
+
+    @media (max-width: 968px) {
+      width: 70%;
+    }
+  }
+
+  .left-slider-chevron-holder {
+    position: absolute;
+    top: 38%;
+    left: 3%;
+
+    @media (max-width: 400px) {
+      top: 30%;
+    }
+  }
+  .left-slider-icon {
+    padding: 6px;
+    background: $gold;
+    border-radius: 50px;
+    color: white !important;
+    cursor: pointer;
+  }
+
+  .right-slider-chevron-holder {
+    position: absolute;
+    top: 38%;
+    right: 3%;
+    @media (max-width: 400px) {
+      top: 30%;
+    }
+  }
+  .right-slider-icon {
+    padding: 6px;
+    background: $gold;
+    border-radius: 50px;
+    color: white !important;
+    cursor: pointer;
+  }
+}

@@ -13,7 +13,15 @@ use App\Models\Tag;
 
 class ShopController extends Controller
 {
-    public function index()
+
+    public function showPage()
+    {
+
+        return view('shop');
+
+    }
+
+    public function fetchData()
     {
 
         $products = collect(ProductsResource::collection(Product::
@@ -29,7 +37,18 @@ class ShopController extends Controller
 
         $colors = Color::where('id', '!=', 0)->get();
 
-        return view('shop', compact('categories', 'products', 'sizes', 'colors', 'brands', 'tags'));
+
+        $response = [
+            'categories' => $categories,
+            'products' => $products,
+            'sizes' => $sizes,
+            'colors' => $colors,
+            'brands' => $brands,
+            'tags' => $tags,
+
+        ];
+
+        return response($response, 201);
 
     }
 }

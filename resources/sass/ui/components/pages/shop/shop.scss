@@ -1,0 +1,251 @@
+.shop-container {
+  margin: 20px 0px 80px 0px;
+  width: 90%;
+  margin-left: 5%;
+  .tow-sections-father {
+    transition: 1s ease;
+    margin-top: 30px;
+    .filter-section {
+      width: 30%;
+      float: left;
+      padding-right: 30px;
+
+      .filter-section {
+        margin: 30px 0px;
+      }
+
+      .categories-filter {
+        margin: 20px 0px;
+      }
+
+      .brands-filter {
+        margin: 40px 0px;
+      }
+
+      .tags-filter {
+        margin: 0px 0px;
+      }
+
+      .price-filter {
+        margin: 40px 0px;
+      }
+
+      .colors-filter {
+        margin: 40px 0px 20px 0px;
+        position: relative;
+      }
+
+      .header-holder {
+        @extend .front-end-header;
+        margin: 0px 0px 10px 10px;
+        float: left;
+      }
+
+      .reset-holder {
+        position: relative;
+        float: right;
+        display: inline-block;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      .category,
+      .sub-category {
+        cursor: pointer;
+        &:hover {
+          color: $main-color !important ;
+          transition: 0.4s all ease;
+        }
+      }
+
+      .category {
+        @extend .header;
+      }
+
+      .sub-category {
+        margin: 0px 10px 10px 10px;
+        @extend .paragraph;
+      }
+
+
+      .brand-span {
+        @extend .light-snackbar-span;
+        margin: 10px 0px 0px 10px;
+      }
+
+      .activeBrandSpan {
+        background: $gold;
+        color: white;
+      }
+
+      .color-blocks-holder {
+        padding: 5px 0px 0px 0px;
+
+        .color-block {
+          position: relative;
+          display: block;
+          float: left;
+          min-width: 100px;
+          margin: 0px 0px 20px 20px;
+
+          .color-holder {
+            float: left;
+            border-radius: 5px;
+            margin-right: 8px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 50%;
+            padding: 2px 5px;
+
+            .color-icon {
+              @extend .icon;
+              @extend .opacity-false;
+              color: white !important;
+            }
+          }
+
+          .paragraph-holder {
+            float: left;
+            margin-top: 3px;
+          }
+        }
+      }
+
+      .size-blocks-holder {
+        padding: 5px 0px 0px 0px;
+
+        .size-block {
+          position: relative;
+          display: block;
+          float: left;
+          min-width: 100px;
+          margin: 0px 0px 20px 20px;
+
+          .size-holder {
+            float: left;
+            border-radius: 5px;
+            margin-right: 8px;
+            cursor: pointer;
+            overflow: hidden;
+            background: white;
+            border: 1px solid $light-gray;
+            padding: 2px 5px;
+
+            .size-icon {
+              @extend .icon;
+              @extend .opacity-false;
+            }
+          }
+
+          .paragraph-holder {
+            float: left;
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+
+    .products-section {
+      width: 70%;
+      float: right;
+
+      .actions-father {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .products-number {
+          float: left;
+          width: 50%;
+          padding-left: 20px;
+          margin-bottom: -15px;
+        }
+
+        .sort {
+          position: relative;
+          float: left;
+          width: 50%;
+          padding-right: 20px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+
+          .field-holder {
+            display: inline-block;
+            max-width: 200;
+
+            .sort-field {
+            }
+          }
+        }
+      }
+
+      .product-holder {
+        transition: 1s all;
+        float: left;
+        width: 25%;
+        margin-top: 15px;
+
+        @media (max-width: 1300px) {
+          width: 50%;
+        }
+
+        @media (max-width: 968px) {
+          width: 33.33%;
+        }
+
+        @media (max-width: 768px) {
+          width: 50%;
+        }
+
+        @media (max-width: 500px) {
+          width: 80%;
+          //   margin-left: 10%;
+        }
+      }
+
+      @media (max-width: 968px) {
+        margin-top: 50px;
+      }
+
+      .pagination {
+        margin-top: 50px;
+      }
+    }
+
+    @media (max-width: 1300px) {
+      .products-section {
+        width: 55%;
+      }
+
+      .filter-section {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 968px) {
+      .products-section {
+        width: 100%;
+        float: none;
+      }
+
+      .filter-section {
+        width: 100%;
+        float: none;
+        padding-right: 0px;
+      }
+    }
+
+
+    .alert-loader-holder {
+      margin: 40px 10px 0px 10px;
+    }
+
+
+    .alert-holder {
+      margin: 40px 10px 0px 10px;
+    }
+
+  }
+
+}

@@ -15,6 +15,7 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
 
     <!--++++++++++++++++++++++++++ the css styles and libraries +++++++++++++++++++++++ -->
 
@@ -43,6 +44,8 @@
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="  {{ asset('css/style.css') }}">
+
+    <link rel="stylesheet" href="  {{ asset('css/app.css') }}">
     <!--++++++++++++++++++++++++++ the css styles and libraries +++++++++++++++++++++++ -->
 
 
@@ -68,7 +71,7 @@
                         <div class="col-xs-3">
                             <img src="{{ asset('images/project/brand.jpeg') }}" alt="no brand" width="100px">
                         </div>
-                        <div class="col-xs9 text-right menu-1">
+                        <div class="col-xs-9 text-right menu-1">
                             <ul>
                                 <li class="has-dropdown"><a href="cart.html"><i class="icon-user"></i>
                                         {{ Auth::check() ? auth()->user()->name : 'account' }}

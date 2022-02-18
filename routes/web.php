@@ -26,7 +26,8 @@ use App\Http\Controllers\Ui\ShopController;
 Auth::routes();
 
 Route::get("/", [HomeController::class, "index"]);
-Route::get("/shop", [ShopController::class, "index"]);
+Route::get("/shop", [ShopController::class, "showPage"]);
+Route::get("/shop/fetchData", [ShopController::class, "fetchData"]);
 // Route::get('/home', function () {
 //     return view('home');
 // })->name('home');

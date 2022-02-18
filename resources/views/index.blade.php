@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <aside id="colorlib-hero">
+    {{-- <aside id="colorlib-hero">
         <div class="flexslider">
             <ul class="slides">
                 @foreach ($sliders as $index => $slider)
@@ -19,8 +19,8 @@
                                                     <h2 class="head-3">45% off</h2>
 
 
-                                                            <p class="category text-center"><span>New stylish shirts, coats
-                                                                </p>
+                                                    <p class="category text-center"><span>New stylish shirts, coats
+                                                    </p>
 
                                                     <p><a href="#" class="btn btn-primary">Shop Collection</a></p>
                                                 </div>
@@ -35,7 +35,7 @@
                                                 <h2 class="head-2">Deals</h2>
                                                 <h2 class="head-3">60% off</h2>
                                                 <p class="category text-center"><span>New stylish clothes
-                                                        </span></p>
+                                                    </span></p>
                                                 <p><a href="#" class="btn btn-primary">Shop Collection</a></p>
                                             </div>
                                         </div>
@@ -48,9 +48,6 @@
             </ul>
         </div>
     </aside>
-
-
-
     <div id="colorlib-featured-product">
         <div class="  categories-container">
             <div class="row">
@@ -69,21 +66,19 @@
 
 
                         @foreach ($categories as $category)
-                        <div class="col-md-6">
-                            <a href="" class="f-product-2" style="background-image: url({{ $category->image }});">
-                                <div class="desc">
-                                    <h2>{{ $category->name }} <br> {{ count( $category->products)  }}  <br> item</h2>
-                                </div>
-                            </a>
-                        </div>
+                            <div class="col-md-6">
+                                <a href="" class="f-product-2" style="background-image: url({{ $category->image }});">
+                                    <div class="desc">
+                                        <h2>{{ $category->name }} <br> {{ count($category->products) }} <br> item</h2>
+                                    </div>
+                                </a>
+                            </div>
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <div class="colorlib-shop">
         <div class="container">
@@ -99,28 +94,26 @@
 
 
                 @foreach ($newArrivalProducts as $product)
+                    <div class="col-md-3 text-center">
+                        <div class="product-entry">
+                            <div class="product-img" style="background-image: url({{ $product->preview_image }});">
+                                <p class="tag"><span class="new">New</span></p>
+                                <div class="cart">
+                                    <p>
+                                        <span class="addtocart"><a href="cart.html"><i
+                                                    class="icon-shopping-cart"></i></a></span>
+                                        <span><a href="product-detail.html"><i class="icon-eye"></i></a></span>
+                                        <span><a href="#"><i class="icon-heart3"></i></a></span>
 
-                <div class="col-md-3 text-center">
-                    <div class="product-entry">
-                        <div class="product-img" style="background-image: url({{ $product->preview_image }});">
-                            <p class="tag"><span class="new">New</span></p>
-                            <div class="cart">
-                                <p>
-                                    <span class="addtocart"><a href="cart.html"><i
-                                                class="icon-shopping-cart"></i></a></span>
-                                    <span><a href="product-detail.html"><i class="icon-eye"></i></a></span>
-                                    <span><a href="#"><i class="icon-heart3"></i></a></span>
-
-                                </p>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <h3><a href="shop.html"> {{ $product->name }} </a></h3>
+                                <p class="price"><span> {{ $product->selling_price }}</span></p>
                             </div>
                         </div>
-                        <div class="desc">
-                            <h3><a href="shop.html">  {{ $product->name }} </a></h3>
-                            <p class="price"><span>  {{ $product->selling_price }}</span></p>
-                        </div>
                     </div>
-                </div>
-
                 @endforeach
 
 
@@ -171,50 +164,45 @@
             <div class="row">
 
                 @foreach ($myProducts as $product)
+                    <div class="col-md-3 text-center">
+                        <div class="product-entry">
+                            <div class="product-img" style="background-image: url({{ $product->preview_image }});">
 
-                <div class="col-md-3 text-center">
-                    <div class="product-entry">
-                        <div class="product-img" style="background-image: url({{ $product->preview_image }});">
+                                @if ($product->selling_price > 200)
+                                    <p class="tag"><span class="new">New</span></p>
+                                @else
 
-                            @if ($product->selling_price > 200)
-                            <p class="tag"><span class="new">New</span></p>
-                            @else
-
-                            <p class="tag"><span class="sale">Sale</span></p>
-                            @endif
-
+                                    <p class="tag"><span class="sale">Sale</span></p>
+                                @endif
 
 
 
-                            <div class="cart">
-                                <p>
-                                    <span class="addtocart"><a href="cart.html"><i
-                                                class="icon-shopping-cart"></i></a></span>
-                                    <span><a href="product-detail.html"><i class="icon-eye"></i></a></span>
-                                    <span><a href="#"><i class="icon-heart3"></i></a></span>
 
-                                </p>
+                                <div class="cart">
+                                    <p>
+                                        <span class="addtocart"><a href="cart.html"><i
+                                                    class="icon-shopping-cart"></i></a></span>
+                                        <span><a href="product-detail.html"><i class="icon-eye"></i></a></span>
+                                        <span><a href="#"><i class="icon-heart3"></i></a></span>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <h3><a href="shop.html"> {{ $product->name }} </a></h3>
+                                <p class="price"><span> {{ $product->selling_price }}</span></p>
                             </div>
                         </div>
-                        <div class="desc">
-                            <h3><a href="shop.html">  {{ $product->name }} </a></h3>
-                            <p class="price"><span>  {{ $product->selling_price }}</span></p>
-                        </div>
                     </div>
-                </div>
-
                 @endforeach
 
             </div>
         </div>
     </div>
 
-
-
-
-
     <div class="card tet-center">
         <img src="{{ substr($sliders[0]->images->first()->image, 2) }}" alt="">
 
-    </div>
+    </div> --}}
+
 @endsection

@@ -1,0 +1,51 @@
+.admins-pages-container {
+  margin: 30px 0px 50px 0px ;
+  width: 80%;
+  margin-left: 10%;
+  @media (max-width: 1200px) {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
+.w-100 {
+  width: 100px;
+}
+
+.m-w-300 {
+  max-width: 300px;
+}
+
+
+
+.snackbar-span {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: smaller;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.light-snackbar-span {
+  @extend .snackbar-span;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgb(236, 232, 232);
+  color: $black-gray;
+  &:hover {
+    background-color: $gold;
+    color: white;
+  }
+}
+
+.items-snackbar-span {
+  @extend .snackbar-span;
+  background-color: $primary;
+  color: white;
+}
+
+
+.my-hr {
+  color: gray ;
+}

@@ -1,0 +1,261 @@
+
+
+.main-header {
+  font-size: 35px;
+  font-weight: normal;
+  color: $black-gray !important ;
+}
+
+.header {
+  font-size: 1rem;
+  font-weight: 600;
+ // line-height: 1.2;
+  color: $black-gray !important ;
+}
+
+.paragraph {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: $black-gray-light;
+}
+
+.white-paragraph {
+  @extend .paragraph;
+  color: white !important;
+}
+
+.hovered-paragraph {
+  @extend .paragraph;
+
+  &:hover {
+    color: $primary !important;
+    cursor: pointer;
+  }
+}
+
+.authentication-link {
+  display: block;
+  float: right;
+  margin-right: 20px;
+  text-decoration: underline;
+  color: $black-gray !important;
+  cursor: pointer;
+  &:hover {
+    color: $primary !important;
+    transition: 0.4s all;
+  }
+}
+
+.last-login {
+  color: $primary !important;
+}
+
+.image-paragraph {
+  @extend .paragraph;
+
+  margin-bottom: 10px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.error-paragraph {
+  @extend .paragraph;
+
+  font-size: 12px !important;
+  color: $red;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+// front end +++++++++++++++++++++++++++++++++++
+// navbar
+.menu-link {
+  cursor: pointer;
+  color: $black-gray;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: 'Roboto';
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $main-color;
+    transition: 0.2s all;
+    .menu-icon {
+      color: $main-color !important;
+      transition: 0.2s all;
+    }
+  }
+}
+
+.active_menu_link  {
+  color: $main-color !important;
+}
+
+.white-menu-link {
+  @extend .menu-link;
+  color: white;
+}
+// navbar
+
+// footer + everywhere
+.front-end-main-header {
+  color: $black-gray;
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+}
+
+.front-end-paragraph {
+  color: $black-gray;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.front-end-header {
+  color: $black-gray;
+  font-weight: 700;
+  font-size: 17px;
+  text-transform: capitalize;
+
+  @media (max-width: 500px) {
+    font-size: 17px;
+  }
+}
+// footer + everywhere
+
+// home page
+.front-end-white-super-header {
+  color: white;
+  font-size: 40px;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  @media (max-width: 768px) {
+    font-size: 35px;
+  }
+}
+
+.front-end-white-header {
+  color: white;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.category-header {
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 500;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+}
+
+.category-paragraph {
+  color: white;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+}
+
+.front-end-link {
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  padding: 0 0 3px;
+  display: inline-block;
+  letter-spacing: 1px;
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 3px;
+    left: 0;
+    top: 25px;
+    position: absolute;
+    background: $yellow;
+    width: 100%;
+  }
+}
+
+.product-category {
+  font-size: 12px;
+  color: gray;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.product-name {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  letter-spacing: 0px;
+  transition: 0.4s all;
+  color: $black;
+  cursor: pointer;
+  &:hover {
+    color: $main-color;
+  }
+}
+
+.product-price {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: $main-color;
+  cursor: pointer;
+}
+
+.product-discount-price {
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: $light-gray;
+  cursor: pointer;
+  text-decoration: line-through;
+
+  display: inline-block;
+  margin-left: 5px;
+}
+
+// home page
+
+
+// whishlist page
+
+.whishlist-header {
+  font-size: 37px;
+  font-weight: 500;
+  color: $black;
+}
+
+.orange-special-header {
+  font-size: 27px;
+  font-weight: 400;
+  color: $main-color;
+}
+// whishlist page
+
+// front end +++++++++++++++++++++++++++++++++++

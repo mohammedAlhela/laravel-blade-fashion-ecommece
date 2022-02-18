@@ -1,3 +1,8 @@
+import Vuetify from 'vuetify'
+import store from './store/index'
+import 'vuetify/dist/vuetify.min.css'
+import '../sass/app.scss'
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -19,9 +24,20 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+// components
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// components
 
-Vue.component('shop-component', require('./components/ShopComponent.vue').default);
+
+// pages
+Vue.component('shop-page', require('./pages/shop/shop.vue').default);
+// pages
+
+
+// plugins
+Vue.use(Vuetify)
+// plugins
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -30,4 +46,6 @@ Vue.component('shop-component', require('./components/ShopComponent.vue').defaul
 
 const app = new Vue({
     el: '#app',
+    store ,
+    vuetify: new Vuetify(), // to access $vuetify inside your Vue components
 });

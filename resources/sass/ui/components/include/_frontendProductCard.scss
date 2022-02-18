@@ -1,0 +1,129 @@
+.product-holder {
+  position: relative;
+  padding: 10px 10px;
+
+
+  .image-holder {
+    position: relative;
+    @extend .set-bg;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover .icon_heart_alt {
+      transition: 0.5s all ease;
+      opacity: 1;
+      bottom: 30px;
+      z-index: 9999;
+    }
+
+    &:not(:hover) .icon_heart_alt {
+      transition: 0.2s all ease;
+    }
+
+    &:hover .icon_cart_alt {
+      transition: 0.7s all ease;
+      opacity: 1;
+      bottom: 30px;
+      z-index: 9999;
+    }
+
+    &:not(:hover) .icon_cart_alt {
+      transition: 0.2s all ease;
+    }
+
+    .variation-image {
+      border-radius: 4px;
+      height: auto;
+      max-width: 100%;
+      vertical-align: middle;
+      transition: 0.6s ease;
+
+      &:hover {
+        opacity: 0;
+      }
+    }
+
+    @mixin lebel {
+      color: white;
+    padding: 2px 25px;
+    top: 10px;
+    border-radius: 2px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    letter-spacing: 1px;
+    }
+
+
+
+
+
+    .stockout-label {
+      @include lebel;
+      background-color: $red;
+    }
+
+    .sale-label {
+      @include lebel;
+      background-color: $gold;
+    }
+
+    @mixin icon {
+      color: $black-gray !important;
+      background: white;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 20px;
+
+      position: absolute;
+      bottom: 0px;
+      opacity: 0;
+      z-index: 0;
+
+      &:hover {
+        transition: 0.2s ease;
+        color: white !important;
+        background: $gold;
+      }
+    }
+
+    .icon_heart_alt {
+      @include icon;
+      left: 20%;
+      &:hover + .icon_cart_alt + .variation-image {
+        opacity: 0;
+      }
+    }
+
+    .icon_cart_alt {
+      @include icon;
+      left: calc(20% + 50px);
+
+      &:hover + .variation-image {
+        opacity: 0;
+      }
+    }
+  }
+
+  .text-holder {
+    text-align: center;
+
+
+    .product-category-holder {
+      @extend .product-category;
+      margin-top: 15px;
+    }
+
+
+    .product-name-holder {
+      @extend .product-name;
+      margin-top: 5px;
+    }
+
+    .product-price-holder {
+      @extend .product-price;
+      margin-top: 5px;
+    }
+  }
+}

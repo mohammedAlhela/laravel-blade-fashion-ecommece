@@ -1,0 +1,26 @@
+.form {
+  text-align: left;
+  padding: 20px 20px 10px 20px;
+
+
+  .input-header {
+    padding: 0px 0px 5px 5px;
+
+    span {
+      @extend .header;
+    }
+  }
+
+  .buttons-holder {
+    margin: -10px 0px 0px 5px;
+  }
+
+
+  .textarea-form-buttons-holder {
+    margin: 5px 0px 5px 15px;
+  }
+
+  .menu-form-buton-holder {
+    margin: -10px 0px 5px 15px;
+  }
+}
