@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Ui;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Sections\ProductsResource;
 use App\Models\Brand;
-use App\Models\Tag;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
 use App\Models\Size;
+use App\Models\Tag;
 
 class ShopController extends Controller
 {
@@ -29,9 +29,7 @@ class ShopController extends Controller
 
         $colors = Color::where('id', '!=', 0)->get();
 
-
-
-        return view('shop' , compact('products' , 'categories' , 'brands' , 'tags' , 'sizes' , 'colors'));
+        return view('shop', compact('categories', 'products', 'sizes', 'colors', 'brands', 'tags'));
 
     }
 }

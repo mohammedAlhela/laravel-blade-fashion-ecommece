@@ -2,9 +2,11 @@
 
 @section('content')
 
-<h1>
-    Shop page is here
-</h1>
+<div id  = "app">
+  <shop-component >
+
+  </shop-component>
+</div>
 
 
 @endsection
