@@ -29,7 +29,7 @@ class HomeController extends Controller
 
 
 
-        return view('index' , compact('categories' , 'sliders' , 'newArrivalProducts' , 'myProducts'));
+        return view('home' , compact('categories' , 'sliders' , 'newArrivalProducts' , 'myProducts'));
 
 
     }

@@ -8,302 +8,541 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> @yield('page_title') </title>
 
-
-
-
+    <link rel="icon" href="{{ URL::asset('img/project/favicon.ico') }}" type="image/x-icon"/>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
 
     <!--++++++++++++++++++++++++++ the css styles and libraries +++++++++++++++++++++++ -->
-
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="  {{ asset('css/animate.css') }} ">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="  {{ asset('css/icomoon.css') }}  ">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="  {{ asset('css/bootstrap.css') }} ">
-
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="  {{ asset('css/magnific-popup.css') }}">
-
-    <!-- Flexslider  -->
-    <link rel="stylesheet" href="  {{ asset('css/flexslider.css') }}">
-
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href=" {{ asset('css/owl.carousel.min.css ') }}">
-
-    <link rel="stylesheet" href="  {{ asset('css/owl.theme.default.min.css') }}">
-
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="  {{ asset('css/bootstrap-datepicker.css') }}">
-    <!-- Flaticons  -->
-    <link rel="stylesheet" href="  {{ asset('fonts/flaticon/font/flaticon.css') }}">
-
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="  {{ asset('css/style.css') }}">
-
-    <link rel="stylesheet" href="  {{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/progressbar_barfiller.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/gijgo.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animated-headline.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!--++++++++++++++++++++++++++ the css styles and libraries +++++++++++++++++++++++ -->
-
-
-
-
-
-
-
 
 </head>
 
-<body>
-
-
-    <div class="colorlib-loader"></div>
-
-    <div id="page">
-
-        <nav class="colorlib-nav" role="navigation">
-            <div class="top-menu">
-                <div class="container">
-                    <div class="row account-holder">
-                        <div class="col-xs-3">
-                            <img src="{{ asset('images/project/brand.jpeg') }}" alt="no brand" width="100px">
-                        </div>
-                        <div class="col-xs-9 text-right menu-1">
-                            <ul>
-                                <li class="has-dropdown"><a href="cart.html"><i class="icon-user"></i>
-                                        {{ Auth::check() ? auth()->user()->name : 'account' }}
-                                    </a>
-                                    <ul class="dropdown">
-                                        @if (Auth::check())
-                                            <li><a href="/home">Profile</a></li>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                style="">
-                                                @csrf
-
-                                                <li><a href="javascript:{}"
-                                                        onclick="document.getElementById('logout-form').submit();">Logout</a>
-                                                </li>
-                                            </form>
-
-                                        @else
-                                            <li><a href="/register">Register</a></li>
-                                            <li><a href="/login">Login</a></li>
-                                        @endif
-                                    </ul>
-                                </li>
-
-                                <li><a href="/whishlist"><i class="icon-heart"></i> Cart [0]</a></li>
-                                <li><a href="/cart"><i class="icon-shopping-cart"></i> Whishlist [0]</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-
-
-
-
-                    <div class="row search-links-holder">
-                        <div class="col-xs-4">
-
-
-
-
-
-                            <div class="input-group add-on search-input">
-                                <input class="form-control" placeholder="Search" name="srch-term" id="srch-term"
-                                    type="text">
-                                <span class="search-icon-holder">
-
-
-                                    <i class="icon-search"></i>
-                                </span>
-                            </div>
-
-
-                        </div>
-                        <div class="col-xs-8 text-right menu-1">
-                            <ul>
-                                <li class="active"><a href="/">Home</a></li>
-                                <li class="has-dropdown">
-                                    <a href="#">Shop</a>
-                                    <ul class="dropdown">
-                                        <li><a href="product-detail.html">Abayas</a></li>
-                                        <li><a href="cart.html">Coats</a></li>
-                                        <li><a href="checkout.html">Kimono</a></li>
-                                        <li><a href="order-complete.html">Pants</a></li>
-
-                                    </ul>
-                                </li>
-                                <li><a href="/blog">Blog</a></li>
-                                <li><a href="/about">About</a></li>
-                                <li><a href="/contact">Contact</a></li>
-
-                                <li class="has-dropdown">
-                                    <a href="#">Policies</a>
-                                    <ul class="dropdown">
-                                        <li><a href="/policies/shipping">Shipping</a></li>
-                                        <li><a href="/policies/Refound">Refound</a></li>
-                                        <li><a href="/policies/Privacy">Privacy</a></li>
-
-
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-
-
+<body class="full-wrapper">
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="img/logo/loder.png" alt="">
                 </div>
             </div>
-        </nav>
-
-        <main>
-            @yield('content')
-        </main>
+        </div>
+    </div>
+    <!-- Preloader Start-->
 
 
+    <main>
+        <!--? Hero Area Start-->
+        <div class="container-fluid">
+            <div class="slider-area">
+                <!-- Mobile Device Show Menu-->
+                <div class="header-right2 d-flex align-items-center">
+                    <!-- Social -->
+                    <div class="header-social  d-block d-md-none">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="search d-block d-md-none" >
+                        <ul class="d-flex align-items-center">
+                            <li class="mr-15">
+                                <div class="nav-search search-switch">
+                                    <i class="ti-search"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-stor">
+                                    <img src="img/gallery/card.svg" alt="">
+                                    <span>0</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /End mobile  Menu-->
 
-        <div id="colorlib-subscribe">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="col-md-6 text-center">
-                            <h2><i class="icon-paperplane"></i>Sign Up for a Newsletter</h2>
-                        </div>
-                        <div class="col-md-6">
-                            <form class="form-inline qbstp-header-subscribe">
-                                <div class="row">
-                                    <div class="col-md-12 col-md-offset-0">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="email"
-                                                placeholder="Enter your email">
-                                            <button type="submit" class="btn btn-primary">Subscribe</button>
-                                        </div>
+                <div class="slider-active dot-style">
+                    <!-- Single -->
+                    <div class="single-slider slider-bg1 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+                                        <h1>fashion<br>changing<br>always</h1>
+                                        <a href="shop.html" class="btn">Shop Now</a>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single -->
+                    <div class="single-slider slider-bg2 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+                                        <h1>fashion<br>changing<br>always</h1>
+                                        <a href="shop.html" class="btn">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single -->
+                    <div class="single-slider slider-bg3 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+                                        <h1>fashion<br>changing<br>always</h1>
+                                        <a href="shop.html" class="btn">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <footer id="colorlib-footer" role="contentinfo">
-            <div class="container">
-                <div class="row row-pb-md">
-                    <div class="col-md-3 colorlib-widget">
-                        <h4>About Istanbuliat</h4>
-                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
-                            adipisci architecto culpa amet.</p>
-                        <p>
-                        <ul class="colorlib-social-icons">
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon-instagram"></i></a></li>
-                        </ul>
-                        </p>
-                    </div>
-                    <div class="col-md-2 colorlib-widget">
-                        <h4>Customer Care</h4>
-
-                        <ul class="colorlib-footer-links">
-                            <li><a href="/contact">Contact</a></li>
-                            <li><a href="#">Returns/Exchange</a></li>
-
-                            <li><a href="/whishlist">Wishlist</a></li>
-                            <li><a href="#">Special</a></li>
-                            <li><a href="#">Customer Services</a></li>
-
-                        </ul>
-
-                    </div>
-                    <div class="col-md-2 colorlib-widget">
-                        <h4>Information</h4>
-
-                        <ul class="colorlib-footer-links">
-                            <li><a href="/about">About us</a></li>
-                            <li><a href="#">Delivery Information</a></li>
-                            <li><a href="policies/privacy">Privacy Policy</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Order Tracking</a></li>
-                        </ul>
-
-                    </div>
-
-
-                    <div class="col-md-3">
-                        <h4>Contact Information</h4>
-                        <ul class="colorlib-footer-links">
-                            <li>Al ailn <br> Alhalidia street</li>
-                            <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                            <li><a href="mailto:info@yoursite.com">istanbuliat@gmail.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="copy">
+        <!-- End Hero -->
+        <!--? Popular Items Start -->
+        <div class="popular-items pt-50">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>
-
-                            <span class="block">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script> All rights reserved | This template is made with <i
-                                    class="icon-heart2" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                    target="_blank">Istanbuliat</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </span>
-
-                        </p>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                            <div class="popular-img">
+                                <img src="img/gallery/popular1.png" alt="">
+                                <div class="img-cap">
+                                    <span>Glasses</span>
+                                </div>
+                                <div class="favorit-items">
+                                 <a href="shop.html" class="btn">Shop Now</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="popular-img">
+                            <img src="img/gallery/popular2.png" alt="">
+                            <div class="img-cap">
+                                <span>Watches</span>
+                            </div>
+                            <div class="favorit-items">
+                             <a href="shop.html" class="btn">Shop Now</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                    <div class="popular-img">
+                        <img src="img/gallery/popular3.png" alt="">
+                        <div class="img-cap">
+                            <span>Jackets</span>
+                        </div>
+                        <div class="favorit-items">
+                         <a href="shop.html" class="btn">Shop Now</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                <div class="popular-img">
+                    <img src="img/gallery/popular4.png" alt="">
+                    <div class="img-cap">
+                        <span>Clothes</span>
+                    </div>
+                    <div class="favorit-items">
+                     <a href="shop.html" class="btn">Shop Now</a>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+</div>
+</div>
+<!-- Popular Items End -->
+<!--? New Arrival Start -->
+<div class="new-arrival">
+    <div class="container">
+        <!-- Section tittle -->
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-10">
+                <div class="section-tittle mb-60 text-center wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                    <h2>new<br>arrival</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                    <div class="popular-img">
+                        <img src="img/gallery/arrival1.png" alt="">
+                        <div class="favorit-items">
+                            <!-- <span class="flaticon-heart"></span> -->
+                            <img src="img/gallery/favorit-card.png" alt="">
+                        </div>
+                    </div>
+                    <div class="popular-caption">
+                        <h3><a href="product_details.html">Knitted Jumper</a></h3>
+                        <div class="rating mb-10">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>$ 30.00</span>
                     </div>
                 </div>
             </div>
-        </footer>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                    <div class="popular-img">
+                        <img src="img/gallery/arrival2.png" alt="">
+                        <div class="favorit-items">
+                            <!-- <span class="flaticon-heart"></span> -->
+                            <img src="img/gallery/favorit-card.png" alt="">
+                        </div>
+                    </div>
+                    <div class="popular-caption">
+                     <h3><a href="product_details.html">Knitted Jumper</a></h3>
+                     <div class="rating mb-10">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>$ 30.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+            <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                <div class="popular-img">
+                    <img src="img/gallery/arrival3.png" alt="">
+                    <div class="favorit-items">
+                        <!-- <span class="flaticon-heart"></span> -->
+                        <img src="img/gallery/favorit-card.png" alt="">
+                    </div>
+                </div>
+                <div class="popular-caption">
+                 <h3><a href="product_details.html">Knitted Jumper</a></h3>
+                 <div class="rating mb-10">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span>$ 30.00</span>
+            </div>
+        </div>
     </div>
-
-    <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+        <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+            <div class="popular-img">
+                <img src="img/gallery/arrival4.png" alt="">
+                <div class="favorit-items">
+                    <!-- <span class="flaticon-heart"></span> -->
+                    <img src="img/gallery/favorit-card.png" alt="">
+                </div>
+            </div>
+            <div class="popular-caption">
+             <h3><a href="product_details.html">Knitted Jumper</a></h3>
+             <div class="rating mb-10">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <span>$ 30.00</span>
+        </div>
     </div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+    <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+        <div class="popular-img">
+            <img src="img/gallery/arrival5.png" alt="">
+            <div class="favorit-items">
+                <!-- <span class="flaticon-heart"></span> -->
+                <img src="img/gallery/favorit-card.png" alt="">
+            </div>
+        </div>
+        <div class="popular-caption">
+         <h3><a href="product_details.html">Knitted Jumper</a></h3>
+         <div class="rating mb-10">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <span>$ 30.00</span>
+    </div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+    <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+        <div class="popular-img">
+            <img src="img/gallery/arrival6.png" alt="">
+            <div class="favorit-items">
+                <!-- <span class="flaticon-heart"></span> -->
+                <img src="img/gallery/favorit-card.png" alt="">
+            </div>
+        </div>
+        <div class="popular-caption">
+         <h3><a href="product_details.html">Knitted Jumper</a></h3>
+         <div class="rating mb-10">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <span>$ 30.00</span>
+    </div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+    <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
+        <div class="popular-img">
+            <img src="img/gallery/arrival7.png" alt="">
+            <div class="favorit-items">
+                <!-- <span class="flaticon-heart"></span> -->
+                <img src="img/gallery/favorit-card.png" alt="">
+            </div>
+        </div>
+        <div class="popular-caption">
+         <h3><a href="product_details.html">Knitted Jumper</a></h3>
+         <div class="rating mb-10">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <span>$ 30.00</span>
+    </div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+    <div class="single-new-arrival mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+        <div class="popular-img">
+            <img src="img/gallery/arrival8.png" alt="">
+            <div class="favorit-items">
+                <!-- <span class="flaticon-heart"></span> -->
+                <img src="img/gallery/favorit-card.png" alt="">
+            </div>
+        </div>
+        <div class="popular-caption">
+         <h3><a href="product_details.html">Knitted Jumper</a></h3>
+         <div class="rating mb-10">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <span>$ 30.00</span>
+    </div>
+</div>
+</div>
+</div>
+<!-- Button -->
+<div class="row justify-content-center">
+    <div class="room-btn">
+        <a href="catagori.html" class="border-btn">Browse More</a>
+    </div>
+</div>
+</div>
+</div>
+<!--? New Arrival End -->
+<!--? collection -->
+<section class="collection section-bg2 section-padding30 section-over1 ml-15 mr-15" data-background="img/gallery/section_bg01.png">
+    <div class="container-fluid"></div>
+    <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9">
+            <div class="single-question text-center">
+                <h2 class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">collection houses our first-ever</h2>
+                <a href="about.html" class="btn class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">About Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- End collection -->
+<!--? Popular Locations Start 01-->
+<div class="popular-product pt-50">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="single-product mb-50">
+                    <div class="location-img">
+                        <img src="img/gallery/popular-imtes1.png" alt="">
+                    </div>
+                    <div class="location-details">
+                        <p><a href="product_details.html">Established fact that by the<br> readable content</a></p>
+                        <a href="product_details.html" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="single-product mb-50">
+                    <div class="location-img">
+                        <img src="img/gallery/popular-imtes2.png" alt="">
+                    </div>
+                    <div class="location-details">
+                        <p><a href="product_details.html">Established fact that by the<br> readable content</a></p>
+                        <a href="product_details.html" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Popular Locations End -->
+<!--? Services Area Start -->
+<div class="categories-area section-padding40 gray-bg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                    <div class="cat-icon">
+                        <img src="img/icon/services1.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Free delivery on all orders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-cat mb-50 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                    <div class="cat-icon">
+                        <img src="img/icon/services2.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Free delivery on all orders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-cat mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                    <div class="cat-icon">
+                        <img src="img/icon/services3.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Free delivery on all orders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-cat wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                    <div class="cat-icon">
+                        <img src="img/icon/services4.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5>Fast & Free Delivery</h5>
+                        <p>Free delivery on all orders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--? Services Area End -->
+</main>
 
-
+<!--? Search model Begin -->
+<div class="search-model-box">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-btn">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Searching key.....">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+<!-- Scroll Up -->
+<div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
 </body>
 
 
-<!--++++++++++++++++++++++++++ the js  +++++++++++++++++++++++ -->
-<!-- jQuery -->
-<script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<!-- jQuery Easing -->
-<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<!-- Waypoints -->
-<script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
-<!-- Flexslider -->
-<script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
-<!-- Owl carousel -->
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<!-- Magnific Popup -->
-<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 
-<script src="{{ asset('js/magnific-popup-options.js') }}"></script>
-<!-- Date Picker -->
-<script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
-<!-- Stellar Parallax -->
-<script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
-<!-- Main -->
-<script src="{{ asset('js/main.js') }}"></script>
+
+<!-- JS here -->
+<!-- Jquery, Popper, Bootstrap -->
+<script src="{{ asset('js/vendor/modernizr-3.5.0.min.js') }} "></script>
+<script src="{{ asset('js/vendor/jquery-1.12.4.min.js') }} "></script>
+<script src="{{ asset('js/popper.min.js') }} "></script>
+<script src="{{ asset('js/bootstrap.min.js') }} "></script>
+
+<!-- Slick-slider , Owl-Carousel ,slick-nav -->
+<script src="{{ asset('js/owl.carousel.min.js') }} "></script>
+<script src="{{ asset('js/slick.min.js') }} "></script>
+<script src="{{ asset('js/jquery.slicknav.min.js') }} "></script>
+
+<!-- One Page, Animated-HeadLin, Date Picker -->
+<script src="{{ asset('js/wow.min.js') }} "></script>
+<script src="{{ asset('js/animated.headline.js') }} "></script>
+<script src="{{ asset('js/jquery.magnific-popup.js') }} "></script>
+<script src="{{ asset('js/gijgo.min.js') }} "></script>
+
+<!-- Nice-select, sticky,Progress -->
+<script src="{{ asset('js/jquery.nice-select.min.js') }} "></script>
+<script src="{{ asset('js/jquery.sticky.js') }} "></script>
+<script src="{{ asset('js/jquery.barfiller.js') }} "></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="{{ asset('js/jquery.counterup.min.js') }} "></script>
+<script src="{{ asset('js/waypoints.min.js') }} "></script>
+<script src="{{ asset('js/jquery.countdown.min.js') }} "></script>
+<script src="{{ asset('js/hover-direction-snake.min.js') }} "></script>
+
+<!-- contact js -->
+<script src="{{ asset('js/contact.js') }} "></script>
+<script src="{{ asset('js/jquery.form.js') }} "></script>
+<script src="{{ asset('js/jquery.validate.min.js') }} "></script>
+<script src="{{ asset('js/mail-script.js') }} "></script>
+<script src="{{ asset('js/jquery.ajaxchimp.min.js') }} "></script>
+
+<!-- Jquery Plugins, main Jquery -->
+<script src="{{ asset('js/plugins.js') }} "></script>
+<script src="{{ asset('js/main.js') }} "></script>
+
+<!-- the application javascript -->
 <script src="{{ asset('js/app.js') }}"></script>
-<!--++++++++++++++++++++++++++ the js +++++++++++++++++++++++ -->
+<!-- JS here -->
 
 </html>
